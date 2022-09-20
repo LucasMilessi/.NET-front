@@ -7,8 +7,7 @@ export const ComboBoxEspecie = ( { setEspecie, especie, todos, obtenerFiltrado} 
   }, [especie])
 
   const eleccion = (valor) => {
-        setEspecie(valor);
-        
+    setEspecie(valor);      
   }
 
   return (

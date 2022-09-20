@@ -2,7 +2,6 @@ import React from "react";
 
 export const ComboBoxFamilia = ( { familiaArray, setFamilia} ) => {
 
-
   const eleccion = (valor) => {
     if(valor === 'LEGUMINOSAS' || valor === 'OTRAS' || valor === 'Seleccione una Familia'){
       window.alert('No se encuentran datos');

@@ -1,9 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { ComboBoxEspecie } from '../components/comboBoxEspecie';
-import { ComboBoxFamilia } from '../components/comboBoxFamilia'
-import { LlenarTabla } from '../components/tabla'
-import '../styles/VistaPrincipal.css'
+import React, { useState, useEffect } from 'react';
 
+import { ComboBoxCicloDeVida } from '../components/comboBox/comboBoxCicloDeVida';
+import { ComboBoxCicloProductivo } from '../components/comboBox/comboBoxCicloProductivo';
+import { ComboBoxEspecie } from '../components/comboBox/comboBoxEspecie';
+import { ComboBoxFamilia } from '../components/comboBox/comboBoxFamilia';
+import { ComboBoxMacollo1 } from '../components/comboBox/comboBoxMacollo1';
+import { ComboBoxMacollo2 } from '../components/comboBox/comboBoxMacollo2';
+import { ComboBoxRizomaEngrozado } from '../components/comboBox/comboBoxRizomaEngrozado';
+import { ComboBoxTipoProductivo } from '../components/comboBox/comboBoxTipoProductivo';
+import { ComboBoxTipoVegetativo } from '../components/comboBox/comboBoxTipoVegetativo';
+
+import { LlenarTabla } from '../components/tabla';
+import '../styles/vistaPrincipal.css'
 
 const URL_API = 'http://localhost:1234/pastura';
 
@@ -34,10 +42,8 @@ function VistaPrincipal() {
 
     useEffect(() => {
         // obtenerFiltrado();
-         
         obtenerTodo();
-    },[familia || especie]);
-
+    },[familia || especie || tipo_vegetativo]);
 
     const familiaArray = [
         {
@@ -54,17 +60,13 @@ function VistaPrincipal() {
         }
     ]
 
-
     const obtenerTodo = () => {
-
         fetch(URL_API)
         .then(response => response.json())
         .then(data => {
             setTodos(data); 
         });
     }
-
-
 
     const obtenerFiltrado = () => {
 
@@ -96,7 +98,6 @@ function VistaPrincipal() {
             body: JSON.stringify(request)
         };
 
-
         fetch(URL_API+"/find", requestOptions)
         .then(response => response.json(response))
         .catch(error => console.error('Error:', error))
@@ -105,19 +106,22 @@ function VistaPrincipal() {
         });
     };
 
-    
-
-
     return (
         <>
             <h1>PASTURA</h1>
             <ComboBoxFamilia familiaArray={ familiaArray } setFamilia={setFamilia}/>
             <ComboBoxEspecie setEspecie={ setEspecie } especie={especie}  todos={ todos } obtenerFiltrado={ obtenerFiltrado } />
+            <ComboBoxTipoVegetativo tipo_vegetativo={tipo_vegetativo} setTipo_vegetativo={setTipo_vegetativo} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxCicloDeVida ciclo_de_vida={ciclo_de_vida} setCiclo_de_vida={setCiclo_de_vida} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxCicloProductivo ciclo_productivo={ciclo_productivo} setCiclo_productivo={setCiclo_productivo} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxMacollo1 macollo1={macollo1} setMacollo1={setMacollo1} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxMacollo2 macollo1={macollo2} setMacollo1={setMacollo2} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxRizomaEngrozado rizoma_engrozado={rizoma_engrozado} setRizoma_engrozado={setRizoma_engrozado} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxTipoProductivo tipo_productivo={tipo_productivo} setTipo_productivo={setTipo_productivo} todos={ todos } obtenerFiltrado={ obtenerFiltrado }/>
             <LlenarTabla llenarTabla={ llenarTabla }/>
             
         </>
     );
-
 };
 
 export default VistaPrincipal;
