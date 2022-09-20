@@ -1,11 +1,21 @@
 import React from "react";
 
-export const ComboBoxFamilia = ( props ) => {
+export const ComboBoxFamilia = ( { familiaArray, setFamilia} ) => {
+
+
+  const eleccion = (valor) => {
+    if(valor === 'LEGUMINOSAS' || valor === 'OTRAS' || valor === 'Seleccione una Familia'){
+      window.alert('No se encuentran datos')
+    }else{  
+      setFamilia(valor);
+    }
+  }
 
   return (
-    <select name="cars" id="cars">
-      { props.array.map((arr) => 
-        <option key={arr.id} value="volvo">{arr.nombre} - {arr.edad}</option>
+    <select onChange={(e) => eleccion(e.target.value)}>
+      <option>Seleccione una Familia</option>
+      { familiaArray.map((arr) => 
+        <option  key={arr.id} value={arr.nombre} >{ arr.nombre }</option>
       ) };
     </select>
   );
