@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-export const ComboBoxEspecie = ( { setEspecie, todos, obtenerFiltrado} ) => {
+export const ComboBoxEspecie = ( { setEspecie, especie, todos, obtenerFiltrado} ) => {
 
+  useEffect(() => {
+    obtenerFiltrado();
+  }, [especie])
 
   const eleccion = (valor) => {
         setEspecie(valor);
-        obtenerFiltrado();
+        
   }
 
   return (
     <select onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione una Especie</option>
       { todos.pasturaMap != null ? todos.pasturaMap.map((arr) => 
-        <option  value={arr.especie} >{ arr.especie }</option>
+        <option key={arr._id}  value={arr.especie} >{ arr.especie }</option>
       ) : null };
     </select>
   );

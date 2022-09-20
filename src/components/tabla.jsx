@@ -6,6 +6,7 @@ export const LlenarTabla = ({ llenarTabla }) => {
     return (
         <>
             <table>
+                <tbody>
                 <tr>
                     <td>Familia</td>
                     <td>Especie</td>
@@ -19,7 +20,7 @@ export const LlenarTabla = ({ llenarTabla }) => {
                     <td>Tipo de Campo</td>
                 </tr>
                  { llenarTabla.pasturaMap != null ? llenarTabla.pasturaMap.map((val) =>
-                 <tr>
+                 <tr key={val._id}>
                     <td >{val.familia}</td>
                     <td >{val.especie}</td>
                     <td >{val.tipo_vegetativo}</td>
@@ -31,8 +32,9 @@ export const LlenarTabla = ({ llenarTabla }) => {
                     <td >{val.tipo_productivo}</td>
                     <td >{val.tipo_de_campo}</td>
                 </tr>
-                 ) : null};
-                </table>
+                 ) : null }
+                 </tbody>
+            </table>
         </>
     )
 

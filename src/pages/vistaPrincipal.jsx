@@ -32,6 +32,13 @@ function VistaPrincipal() {
     const [llenarTabla, setLlenarTabla] = useState([]);
     const [todos, setTodos] = useState([]);
 
+    useEffect(() => {
+        // obtenerFiltrado();
+         
+        obtenerTodo();
+    },[familia || especie]);
+
+
     const familiaArray = [
         {
             id : 'qweqwe',
@@ -47,20 +54,18 @@ function VistaPrincipal() {
         }
     ]
 
-    useEffect(() => {
-        obtenerFiltrado();
-        obtenerTodo();
-    },[familia, especie])
 
     const obtenerTodo = () => {
 
         fetch(URL_API)
         .then(response => response.json())
-        .then(data => setTodos(data));
-
+        .then(data => {
+            setTodos(data); 
+        });
     }
 
-    
+
+
     const obtenerFiltrado = () => {
 
         let request = {
@@ -85,7 +90,6 @@ function VistaPrincipal() {
             "tipo_productivo": tipo_productivo
         };
 
-        console.log("request:"+JSON.stringify(request));
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -94,23 +98,23 @@ function VistaPrincipal() {
 
 
         fetch(URL_API+"/find", requestOptions)
-        .then(response => response.json(console.log(response)))
+        .then(response => response.json(response))
         .catch(error => console.error('Error:', error))
         .then(response => {
             setLlenarTabla(response);
-            console.log('Success:', response)});
+        });
     };
 
-console.log("FAMILIA : "+familia);
-console.log(llenarTabla.pasturaMap);
+    
 
 
     return (
         <>
             <h1>PASTURA</h1>
             <ComboBoxFamilia familiaArray={ familiaArray } setFamilia={setFamilia}/>
-            <ComboBoxEspecie setEspecie={ setEspecie }  todos={ todos } obtenerFiltrado={ obtenerFiltrado } />
+            <ComboBoxEspecie setEspecie={ setEspecie } especie={especie}  todos={ todos } obtenerFiltrado={ obtenerFiltrado } />
             <LlenarTabla llenarTabla={ llenarTabla }/>
+            
         </>
     );
 
