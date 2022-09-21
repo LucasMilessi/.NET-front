@@ -6,6 +6,7 @@ import '../../styles/table.css'
 export const LlenarTabla = ({ llenarTabla }) => {
 
     const [detalle, setDetalle] = useState([]);
+    const [click, setClick] = useState(false)
 
     const obtenerDetallesPorID = (id) => {
         fetch('http://localhost:1234/pastura/search/'+id)
@@ -14,6 +15,7 @@ export const LlenarTabla = ({ llenarTabla }) => {
             setDetalle(data); 
         });
         console.log(detalle);
+        setClick(true);
     }
 
     return (
@@ -29,7 +31,7 @@ export const LlenarTabla = ({ llenarTabla }) => {
                     </thead>
                     <tbody>
                     { llenarTabla.pasturaMap != null ? llenarTabla.pasturaMap.map((val) =>
-                    <tr key={makeRandomId(3)}>
+                    <tr className='tr' key={makeRandomId(3)}>
                         <td >{val.familia}</td>
                         <td >{val.especie}</td>
                         <td >{val.tipo_de_campo}</td>
@@ -40,7 +42,10 @@ export const LlenarTabla = ({ llenarTabla }) => {
             
             </table>
 
+            { click ?
+            <>
             <h4>DETALLES:</h4>
+             
             <table class="table table-striped table-active">
                 <thead class="table-danger">
                     <tr>
@@ -71,6 +76,8 @@ export const LlenarTabla = ({ llenarTabla }) => {
                 </tr>
                  </tbody>
             </table>
+            </>
+            : null }
             </div>
     )
 

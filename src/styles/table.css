@@ -7,3 +7,7 @@
 .table{
     background-color: white;
 }
+
+.tr:hover{
+    background-color:aqua ;
+}
