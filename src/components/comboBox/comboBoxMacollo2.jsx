@@ -12,7 +12,7 @@ export const ComboBoxMacollo2 = ( { macollo2, setMacollo2, obtenerFiltrado} ) =>
 
   // useEffect(() => {
   //   obtenerValores();
-  // })
+  // },[])
 
   const eleccion = (valor) => {
     setMacollo2(valor);      

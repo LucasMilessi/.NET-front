@@ -98,6 +98,8 @@ function VistaPrincipal() {
     return (
         <div class="fondo">
             <h1>PASTURA</h1>
+            <label><b>USTED ESTA FILTRANDO POR :</b> /{familia}/{especie}/{tipo_vegetativo}/{ciclo_de_vida}/{ciclo_productivo}/{macollo1}/{macollo2}/{rizoma_engrozado}/{tipo_productivo}</label>
+            <br/>
             <ComboBoxFamilia familiaArray={ familiaArray } setFamilia={setFamilia}/>
             <ComboBoxEspecie setEspecie={ setEspecie } especie={especie} obtenerFiltrado={ obtenerFiltrado } />
             <ComboBoxTipoVegetativo tipo_vegetativo={tipo_vegetativo} setTipo_vegetativo={setTipo_vegetativo} obtenerFiltrado={ obtenerFiltrado }/>

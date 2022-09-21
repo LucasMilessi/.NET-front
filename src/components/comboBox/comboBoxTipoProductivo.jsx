@@ -12,7 +12,7 @@ export const ComboBoxTipoProductivo = ( { tipo_productivo, setTipo_productivo , 
 
     // useEffect(() => {
     //     obtenerValores();
-    // })
+    // },[])
 
     const eleccion = (valor) => {
         setTipo_productivo(valor);      

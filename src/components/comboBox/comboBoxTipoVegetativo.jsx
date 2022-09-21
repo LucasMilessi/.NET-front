@@ -12,7 +12,7 @@ export const ComboBoxTipoVegetativo = ( { tipo_vegetativo, setTipo_vegetativo , 
 
     // useEffect(() => {
     //     obtenerValores();
-    // })
+    // },[])
 
     const eleccion = (valor) => {
         setTipo_vegetativo(valor);      

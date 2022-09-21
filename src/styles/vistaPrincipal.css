@@ -21,6 +21,12 @@ html{
     background-image:url(https://img.freepik.com/foto-gratis/fondo-textura-hierba_64049-124.jpg?w=2000);
 }
 
+label{
+    margin-left: 10%;
+    background-color: black;
+    color: aqua;
+}
+
 
 
 

@@ -12,7 +12,7 @@ export const ComboBoxCicloProductivo = ( { ciclo_productivo, setCiclo_productivo
 
   // useEffect(() => {
   //   obtenerValores();
-  // })
+  // },[])
 
   const eleccion = (valor) => {
     setCiclo_productivo(valor);      

@@ -11,7 +11,7 @@ export const ComboBoxEspecie = ( { setEspecie, especie, obtenerFiltrado} ) => {
 
   // useEffect(() => {
   //   obtenerValores();
-  // })
+  // },[])
 
   const eleccion = (valor) => {
     setEspecie(valor);      

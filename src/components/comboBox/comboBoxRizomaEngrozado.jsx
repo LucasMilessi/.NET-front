@@ -12,7 +12,7 @@ export const ComboBoxRizomaEngrozado = ( { rizoma_engrozado, setRizoma_engrozado
 
   // useEffect(() => {
   //   obtenerValores();
-  // })
+  // },[])
 
   const eleccion = (valor) => {
     setRizoma_engrozado(valor);      
