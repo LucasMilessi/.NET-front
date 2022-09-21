@@ -1,9 +1,26 @@
-:root{
-    background-color: #ebebeb;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 h1{
-    color: #666;
+
+    color: rgb(0, 0, 0);
     text-align: center;
     font-style:oblique;
+    font-size: 100px;
 }
+
+.fondo{
+    height: 150%;
+    background-image:url(https://img.freepik.com/foto-gratis/fondo-textura-hierba_64049-124.jpg?w=2000);
+}
+
+html{
+    background-image:url(https://img.freepik.com/foto-gratis/fondo-textura-hierba_64049-124.jpg?w=2000);
+}
+
+
+
+
