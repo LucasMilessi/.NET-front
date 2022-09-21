@@ -95,9 +95,16 @@ function VistaPrincipal() {
         });
     };
 
+
+    const recargar = () =>{
+        window.location.href = window.location.href;
+    }
+
+
     return (
         <div class="fondo">
             <h1>PASTURA</h1>
+            <button id="recargar" type="button" class="btn btn-danger m-4" onClick={() => recargar()}>Borrar Filtros</button>
             <label><b>USTED ESTA FILTRANDO POR :</b> /{familia}/{especie}/{tipo_vegetativo}/{ciclo_de_vida}/{ciclo_productivo}/{macollo1}/{macollo2}/{rizoma_engrozado}/{tipo_productivo}</label>
             <br/>
             <ComboBoxFamilia familiaArray={ familiaArray } setFamilia={setFamilia}/>
