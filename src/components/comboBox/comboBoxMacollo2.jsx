@@ -10,10 +10,6 @@ export const ComboBoxMacollo2 = ( { macollo2, setMacollo2, obtenerFiltrado} ) =>
     obtenerFiltrado();
   }, [macollo2])
 
-  // useEffect(() => {
-  //   obtenerValores();
-  // },[])
-
   const eleccion = (valor) => {
     setMacollo2(valor);      
   }
@@ -30,6 +26,9 @@ export const ComboBoxMacollo2 = ( { macollo2, setMacollo2, obtenerFiltrado} ) =>
     <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione un Macollo [2]</option>
       { llenarMacollo2 != null ? llenarMacollo2.map((arr) => 
+      arr == macollo2 ?
+        <option selected key={makeRandomId(10)}  value={arr} >{ arr }</option>
+        :
         <option key={makeRandomId(10)}  value={arr} >{ arr }</option>
       ) : null };
     </select>

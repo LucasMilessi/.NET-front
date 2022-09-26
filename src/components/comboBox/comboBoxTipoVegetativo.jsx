@@ -10,10 +10,6 @@ export const ComboBoxTipoVegetativo = ( { tipo_vegetativo, setTipo_vegetativo , 
         obtenerFiltrado();
     }, [tipo_vegetativo])
 
-    // useEffect(() => {
-    //     obtenerValores();
-    // },[])
-
     const eleccion = (valor) => {
         setTipo_vegetativo(valor);      
     }
@@ -30,6 +26,9 @@ export const ComboBoxTipoVegetativo = ( { tipo_vegetativo, setTipo_vegetativo , 
         <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
         <option>Seleccione un Tipo Vegetativo</option>
         { llenarTipo_vegetativo != null ? llenarTipo_vegetativo.map((arr) => 
+        arr == tipo_vegetativo ?
+            <option selected key={makeRandomId(10)}  value={arr} >{ arr }</option>
+            :
             <option key={makeRandomId(10)}  value={arr} >{ arr }</option>
         ) : null };
         </select>
