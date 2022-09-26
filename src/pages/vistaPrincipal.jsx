@@ -13,9 +13,10 @@ import { ComboBoxTipoVegetativo } from '../components/comboBox/comboBoxTipoVeget
 import { LlenarTabla } from '../components/table/tabla';
 import '../styles/vistaPrincipal.css'
 
-const URL_API = 'http://localhost:1234/pastura';
-
+const URL_API = "https://Pasturas-Back.fernandoh11.repl.co/pastura";
+//console.log(URL_API);
 function VistaPrincipal() {
+    console.log(URL_API);
     const [familia, setFamilia] = useState();
     const [especie, setEspecie] = useState();
     const [tipo_vegetativo, setTipo_vegetativo] = useState();

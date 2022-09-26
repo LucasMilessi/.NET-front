@@ -19,7 +19,7 @@ export const ComboBoxCicloProductivo = ( { ciclo_productivo, setCiclo_productivo
   }
 
   const obtenerValores = () => {
-    fetch('http://localhost:1234/pastura/valores/ciclo_productivo')
+    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/ciclo_productivo')
     .then(response => response.json())
     .then(data => {
       setLlenarCiclo_productivo(data);

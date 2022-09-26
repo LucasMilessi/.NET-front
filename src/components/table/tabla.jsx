@@ -9,7 +9,7 @@ export const LlenarTabla = ({ llenarTabla }) => {
     const [click, setClick] = useState(false)
 
     const obtenerDetallesPorID = (id) => {
-        fetch('http://localhost:1234/pastura/search/'+id)
+        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/search/'+id)
         .then(response => response.json())
         .then(data => {
             setDetalle(data); 

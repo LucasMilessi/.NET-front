@@ -19,7 +19,7 @@ export const ComboBoxTipoProductivo = ( { tipo_productivo, setTipo_productivo , 
     }
 
     const obtenerValores = () => {
-        fetch('http://localhost:1234/pastura/valores/tipo_productivo')
+        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/tipo_productivo')
         .then(response => response.json())
         .then(data => {
             setLlenarTipo_productivo(data);
