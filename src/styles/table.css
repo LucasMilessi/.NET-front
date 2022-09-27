@@ -5,7 +5,8 @@
 }
 
 h4{
-    background-color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.322);
+    color: rgb(255, 255, 255);
     font-size: 34px;
     width: 13%;
 }
@@ -15,7 +16,7 @@ h4{
 }
 
 .tr:hover{
-    background-color:rgba(10, 72, 47, 0.303) ;
+    background-color:rgba(0, 142, 167, 0.318) ;
 }
 
 .container-sm{
