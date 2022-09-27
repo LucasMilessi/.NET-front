@@ -14,5 +14,5 @@
 }
 
 .utec:active{
-    width: 45%;
+    transform: scale(0.8);
 }
