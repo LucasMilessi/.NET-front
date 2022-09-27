@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.pre-footer{
+    background-color: rgb(12,100,179);
+    height: 5px;
+}
+
+.utec:hover{
+    cursor: pointer;
+}
+
+.utec:active{
+    width: 45%;
+}

@@ -9,6 +9,7 @@ import { ComboBoxMacollo2 } from '../components/comboBox/comboBoxMacollo2';
 import { ComboBoxRizomaEngrozado } from '../components/comboBox/comboBoxRizomaEngrozado';
 import { ComboBoxTipoProductivo } from '../components/comboBox/comboBoxTipoProductivo';
 import { ComboBoxTipoVegetativo } from '../components/comboBox/comboBoxTipoVegetativo';
+import Footer from '../components/footer/footer';
 
 import { LlenarTabla } from '../components/table/tabla';
 import '../styles/vistaPrincipal.css'
@@ -16,7 +17,7 @@ import '../styles/vistaPrincipal.css'
 const URL_API = "https://Pasturas-Back.fernandoh11.repl.co/pastura";
 //console.log(URL_API);
 function VistaPrincipal() {
-    console.log(URL_API);
+    //console.log(URL_API);
     const [familia, setFamilia] = useState();
     const [especie, setEspecie] = useState();
     const [tipo_vegetativo, setTipo_vegetativo] = useState();
@@ -98,7 +99,15 @@ function VistaPrincipal() {
 
 
     const recargar = () =>{
-        window.location.href = window.location.href;
+        setFamilia("");
+        setEspecie("");
+        setTipo_vegetativo("");
+        setCiclo_de_vida("");
+        setCiclo_productivo("");
+        setMacollo1("");
+        setMacollo2("");
+        setRizoma_engrozado("");
+        setTipo_productivo("");
     }
 
 
@@ -118,6 +127,7 @@ function VistaPrincipal() {
             <ComboBoxRizomaEngrozado rizoma_engrozado={rizoma_engrozado} setRizoma_engrozado={setRizoma_engrozado} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxTipoProductivo tipo_productivo={tipo_productivo} setTipo_productivo={setTipo_productivo}  obtenerFiltrado={ obtenerFiltrado }/>
             <LlenarTabla llenarTabla={ llenarTabla }/> 
+            <Footer/>
         </div>
     );
 };

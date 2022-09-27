@@ -17,3 +17,7 @@ h4{
 .tr:hover{
     background-color:rgba(10, 72, 47, 0.303) ;
 }
+
+.container-sm{
+    margin-bottom: 120px;
+}
