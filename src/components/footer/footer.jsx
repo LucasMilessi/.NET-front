@@ -9,7 +9,7 @@ import '../../styles/footer.css'
 
 export default function Footer() {
     const redireccion = () => {
-        window.location.href ="https://www.fing.edu.uy/tecnoinf/paysandu/index.html";
+        window.open ("https://www.fing.edu.uy/tecnoinf/paysandu/index.html","_blank");
     }
   return (<>
     <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>

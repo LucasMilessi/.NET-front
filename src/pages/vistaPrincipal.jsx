@@ -10,6 +10,7 @@ import { ComboBoxRizomaEngrozado } from '../components/comboBox/comboBoxRizomaEn
 import { ComboBoxTipoProductivo } from '../components/comboBox/comboBoxTipoProductivo';
 import { ComboBoxTipoVegetativo } from '../components/comboBox/comboBoxTipoVegetativo';
 import Footer from '../components/footer/footer';
+import ImgRegistro from '../components/imgRegistro/imgRegistro';
 
 import { LlenarTabla } from '../components/table/tabla';
 import '../styles/vistaPrincipal.css'
@@ -42,7 +43,9 @@ function VistaPrincipal() {
 
     useEffect(() => {
         obtenerFiltrado();
+        
     },[familia])
+
 
     const familiaArray = [
         {
@@ -115,19 +118,19 @@ function VistaPrincipal() {
         <div class="fondo">
             <h1>PASTURA</h1>
             <button id="recargar" type="button" class="btn btn-danger m-4" onClick={() => recargar()}>Borrar Filtros</button>
-            <label><b>USTED ESTA FILTRANDO POR :</b> /{familia}/{especie}/{tipo_vegetativo}/{ciclo_de_vida}/{ciclo_productivo}/{macollo1}/{macollo2}/{rizoma_engrozado}/{tipo_productivo}</label>
+            <label><b>USTED ESTA FILTRANDO POR :</b> /{familia}/{tipo_vegetativo}/{ciclo_de_vida}/{ciclo_productivo}/{macollo1}/{macollo2}/{rizoma_engrozado}/{especie}</label>
             <br/>
-            <ComboBoxFamilia familiaArray={ familiaArray } setFamilia={setFamilia}/>
-            <ComboBoxEspecie setEspecie={ setEspecie } especie={especie} obtenerFiltrado={ obtenerFiltrado } />
+            <ComboBoxFamilia familiaArray={ familiaArray } familia={familia} setFamilia={setFamilia}/>
             <ComboBoxTipoVegetativo tipo_vegetativo={tipo_vegetativo} setTipo_vegetativo={setTipo_vegetativo} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxCicloDeVida ciclo_de_vida={ciclo_de_vida} setCiclo_de_vida={setCiclo_de_vida}  obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxCicloProductivo ciclo_productivo={ciclo_productivo} setCiclo_productivo={setCiclo_productivo} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxMacollo1 macollo1={macollo1} setMacollo1={setMacollo1} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxMacollo2 macollo2={macollo2} setMacollo2={setMacollo2} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxRizomaEngrozado rizoma_engrozado={rizoma_engrozado} setRizoma_engrozado={setRizoma_engrozado} obtenerFiltrado={ obtenerFiltrado }/>
-            <ComboBoxTipoProductivo tipo_productivo={tipo_productivo} setTipo_productivo={setTipo_productivo}  obtenerFiltrado={ obtenerFiltrado }/>
+            <ComboBoxEspecie setEspecie={ setEspecie } especie={especie} obtenerFiltrado={ obtenerFiltrado } />
             <LlenarTabla llenarTabla={ llenarTabla }/> 
             <Footer/>
+            <ImgRegistro/>
         </div>
     );
 };

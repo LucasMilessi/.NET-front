@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-h4{
-    background-color: rgba(0, 0, 0, 0.322);
-    color: rgb(255, 255, 255);
-    font-size: 34px;
-    width: 13%;
-}
-
 .table{
     background-color: white;
 }
