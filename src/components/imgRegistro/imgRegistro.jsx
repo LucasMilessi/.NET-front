@@ -17,6 +17,7 @@ const ImgRegistro = () => {
     const imgSave = () => {
         var datos = img.split(',')[0];
         var contentType = img.split(',')[1];
+        
         let request = {
             "img":{
                 "data":datos,
