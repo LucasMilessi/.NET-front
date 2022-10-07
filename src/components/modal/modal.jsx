@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Base64 } from "js-base64";
+import "../../styles/modal.css";
+import ImgPD from "../img/ImagenPorDefecto.png";
 
 const Modal = ({detalle, setClick, setDetalle}) => {
 
     const [imagen, setImagen] = useState('')
     const [disable, setDisable] = useState(true)
     
-
     const actualizar = () =>{
         setClick(false);
         setDetalle("");
@@ -23,11 +24,6 @@ const Modal = ({detalle, setClick, setDetalle}) => {
         setImagen(imagen)
     }
 
-    // const mostrarImagen = () => {
-    //     contruirImg();
-    //     setDisable(!disable)
-    // }
-
     if(detalle.img !== null){
         contruirImg();
     }
@@ -42,7 +38,7 @@ const Modal = ({detalle, setClick, setDetalle}) => {
                 X
             </BotonCerrar>
             <Contenido>
-            <table class="table table-striped table-active">
+            <table class="tabla table">
                     <thead>
                     <tr key={1}>
                          <th>Familia</th>
@@ -85,8 +81,8 @@ const Modal = ({detalle, setClick, setDetalle}) => {
                         <td >{detalle.tipo_de_campo}</td>
                     </tr>
                     <tr key={10}>
-                        <th>Imagen</th>
-                        <img src={imagen}  height={60} />
+                        <th className='imagen'>Imagen</th>
+                        {detalle.img ? <img className='imgenPastura' src={imagen} alt={"Imagen de la Pastura"}/> : <img className='imgenPastura' src={ImgPD} alt={"Imagen por Defecto"}/>}          
                     </tr>
                  </thead>
              </table>

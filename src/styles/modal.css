@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
-a{
-text-align: center;
+.imagen{
+    vertical-align: text-top;
 }
+
+.tabla{
+    background-color: rgba(89, 89, 89, 0.075);
+}
+    
+.imgenPastura{
+    width: 400px;
+}
+
