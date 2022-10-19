@@ -23,7 +23,7 @@ export const ComboBoxTipoVegetativo = ( { tipo_vegetativo, setTipo_vegetativo , 
     }
     
     return (
-        <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
+        <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
         <option>Seleccione un Tipo Vegetativo</option>
         { llenarTipo_vegetativo != null ? llenarTipo_vegetativo.map((arr) => 
         arr == tipo_vegetativo ?

@@ -9,9 +9,17 @@
 }
 
 .tr:hover{
-    background-color:rgba(0, 142, 167, 0.318) ;
+    background-color:rgba(0, 217, 255, 0.123) ;
 }
 
 .container-sm{
     margin-bottom: 120px;
+}
+
+.tablas{
+   border: 1px; 
+}
+
+.tableAll{
+    padding: 30px;
 }

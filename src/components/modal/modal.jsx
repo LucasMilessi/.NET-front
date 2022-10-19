@@ -38,7 +38,7 @@ const Modal = ({detalle, setClick, setDetalle}) => {
                 X
             </BotonCerrar>
             <Contenido>
-            <table class="tabla table">
+            <table className="tabla table">
                     <thead>
                     <tr key={1}>
                          <th>Familia</th>

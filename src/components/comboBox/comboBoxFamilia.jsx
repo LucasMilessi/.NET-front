@@ -11,7 +11,7 @@ export const ComboBoxFamilia = ( { familiaArray, setFamilia, familia} ) => {
   }
 
   return (
-    <select class="form-select-sm m-4" onChange={(e) => eleccion(e.target.value)}>
+    <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option value={""}>Seleccione una Familia</option> 
       {familiaArray.map((arr) => 
         <option  key={arr.id} value={arr.nombre} >{ arr.nombre }</option>

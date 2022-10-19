@@ -23,7 +23,7 @@ export const ComboBoxTipoProductivo = ( { tipo_productivo, setTipo_productivo , 
     }
     
     return (
-        <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
+        <select clasclassNames="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
         <option>Seleccione un Tipo Productivo</option>
         { llenarTipo_productivo != null ? llenarTipo_productivo.map((arr) => 
         arr == tipo_productivo ?

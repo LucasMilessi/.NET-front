@@ -23,7 +23,7 @@ export const ComboBoxMacollo1 = ( { macollo1, setMacollo1, obtenerFiltrado} ) =>
   }  
 
   return (
-    <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
+    <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione un Macollo [1]</option>
       { llenarMacollo1 != null ? llenarMacollo1.map((arr) => 
       arr == macollo1 ?

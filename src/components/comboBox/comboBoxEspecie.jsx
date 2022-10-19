@@ -22,7 +22,7 @@ export const ComboBoxEspecie = ( { setEspecie, especie, obtenerFiltrado} ) => {
   }  
 
   return (
-    <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
+    <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione una Especie</option>
       { llenarEspecie != null ? llenarEspecie.map((arr) => 
         arr == especie ?

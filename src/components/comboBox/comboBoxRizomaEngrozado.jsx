@@ -23,7 +23,7 @@ export const ComboBoxRizomaEngrozado = ( { rizoma_engrozado, setRizoma_engrozado
   } 
 
   return (
-    <select class="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
+    <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione un Rizoma</option>
       { llenarRizoma_engrozado != null ? llenarRizoma_engrozado.map((arr) => 
       arr == rizoma_engrozado ?

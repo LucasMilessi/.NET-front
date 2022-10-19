@@ -7,18 +7,23 @@ import { ComboBoxFamilia } from '../components/comboBox/comboBoxFamilia';
 import { ComboBoxMacollo1 } from '../components/comboBox/comboBoxMacollo1';
 import { ComboBoxMacollo2 } from '../components/comboBox/comboBoxMacollo2';
 import { ComboBoxRizomaEngrozado } from '../components/comboBox/comboBoxRizomaEngrozado';
-import { ComboBoxTipoProductivo } from '../components/comboBox/comboBoxTipoProductivo';
+import { ComboBoxApice } from '../components/comboBox/comboBoxApice';
+import { ComboBoxConsistenciaDeLigula } from '../components/comboBox/comboBoxConsistenciaDeLigula';
+import { ComboBoxFormaDeLamina } from '../components/comboBox/comboBoxFormaDeLamina';
+import { ComboBoxFormaDeLigula } from '../components/comboBox/comboBoxFormaDeLigula';
+import { ComboBoxNervadura} from '../components/comboBox/comboBoxNervadura';
+import { ComboBoxPelos } from '../components/comboBox/comboBoxPelos';
+import { ComboBoxTipoDeLamina } from '../components/comboBox/comboBoxTipoDeLamina';
 import { ComboBoxTipoVegetativo } from '../components/comboBox/comboBoxTipoVegetativo';
+import { ComboBoxUbicacionPelos } from '../components/comboBox/comboBoxUbicacionPelos';
 import Footer from '../components/footer/footer';
-import ImgRegistro from '../components/imgRegistro/imgRegistro';
-
 import { LlenarTabla } from '../components/table/tabla';
 import '../styles/vistaPrincipal.css'
 
 const URL_API = "https://Pasturas-Back.fernandoh11.repl.co/pastura";
-//console.log(URL_API);
+
 function VistaPrincipal() {
-    //console.log(URL_API);
+
     const [familia, setFamilia] = useState();
     const [especie, setEspecie] = useState();
     const [tipo_vegetativo, setTipo_vegetativo] = useState();
@@ -28,16 +33,23 @@ function VistaPrincipal() {
     const [consistecia_de_la_ligula, setConsistecia_de_la_ligula] = useState();
     const [forma_de_la_ligula, setForma_de_la_ligula] = useState();
     const [tamanio, setTamanio] = useState();
+    const [otraCaracteristicaLigula, setOtraCaracteristicaLigula] = useState();
     const [color_de_la_ligula, setColor_de_la_ligula] = useState();
     const [forma_de_la_lamina, setForma_de_la_lamina] = useState();
     const [canaliculada, setCanaliculada] = useState();
     const [tipo_de_lamina, setTipo_de_lamina] = useState();
     const [apice, setApice] = useState();
     const [nervadura_central_marcada, setNervadura_central_marcada] = useState();
+    const [observaciones, setObservaciones] = useState();
     const [pelos, setPelos] = useState();
+    const [ubicaciónDePelos, setUbicaciónDePelos] = useState();
+    const [observacion, setObservacion] = useState();
+    const [observacionesGenerales, setObservacionesGenerales] = useState();
     const [ciclo_de_vida, setCiclo_de_vida] = useState();
     const [ciclo_productivo, setCiclo_productivo] = useState();
     const [tipo_productivo, setTipo_productivo] = useState();
+    const [tipoDeCampo, setTipoDeCampo] = useState();
+    const [img] = useState();
 
     const [llenarTabla, setLlenarTabla] = useState([]);
 
@@ -65,7 +77,7 @@ function VistaPrincipal() {
     const obtenerFiltrado = () => {
 
         let request = {
-            "familia" : familia,
+            "familia": familia,
             "especie": especie,
             "tipo_vegetativo": tipo_vegetativo,
             "rizoma_engrozado": rizoma_engrozado,
@@ -74,16 +86,23 @@ function VistaPrincipal() {
             "consistecia_de_la_ligula": consistecia_de_la_ligula,
             "forma_de_la_ligula": forma_de_la_ligula,
             "tamanio": tamanio,
+            "otra_caracteristica_ligula": otraCaracteristicaLigula,
             "color_de_la_ligula": color_de_la_ligula,
             "forma_de_la_lamina": forma_de_la_lamina,
             "canaliculada": canaliculada,
             "tipo_de_lamina": tipo_de_lamina,
             "apice": apice,
             "nervadura_central_marcada": nervadura_central_marcada,
+            "observaciones": observaciones,
             "pelos": pelos,
+            "ubicación_de_pelos": ubicaciónDePelos,
+            "observacion": observacion,
+            "observaciones_generales": observacionesGenerales,
             "ciclo_de_vida": ciclo_de_vida,
             "ciclo_productivo": ciclo_productivo,
-            "tipo_productivo": tipo_productivo
+            "tipo_productivo": tipo_productivo,
+            "tipo_de_campo": tipoDeCampo,
+            "img": img,
         };
 
         const requestOptions = {
@@ -115,9 +134,9 @@ function VistaPrincipal() {
 
 
     return (
-        <div class="fondo">
+        <div className="fondo">
             <h1>PASTURA</h1>
-            <button id="recargar" type="button" class="btn btn-danger m-4" onClick={() => recargar()}>Borrar Filtros</button>
+            <button id="recargar" type="button" className="btn btn-danger m-4" onClick={() => recargar()}>Borrar Filtros</button>
             <label><b>USTED ESTA FILTRANDO POR :</b> /{familia}/{tipo_vegetativo}/{ciclo_de_vida}/{ciclo_productivo}/{macollo1}/{macollo2}/{rizoma_engrozado}/{especie}</label>
             <br/>
             <ComboBoxFamilia familiaArray={ familiaArray } familia={familia} setFamilia={setFamilia}/>
@@ -128,9 +147,10 @@ function VistaPrincipal() {
             <ComboBoxMacollo2 macollo2={macollo2} setMacollo2={setMacollo2} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxRizomaEngrozado rizoma_engrozado={rizoma_engrozado} setRizoma_engrozado={setRizoma_engrozado} obtenerFiltrado={ obtenerFiltrado }/>
             <ComboBoxEspecie setEspecie={ setEspecie } especie={especie} obtenerFiltrado={ obtenerFiltrado } />
+            <ComboBoxApice apice={apice} setApice={setApice} obtenerFiltrado={ obtenerFiltrado }/>
+            
             <LlenarTabla llenarTabla={ llenarTabla }/> 
             <Footer/>
-            <ImgRegistro/>
         </div>
     );
 };
