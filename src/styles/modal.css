@@ -16,3 +16,57 @@
     width: 400px;
 }
 
+.contenido{
+	display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-between;
+    padding-top: 30px;
+    min-width: 1300px;
+    box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
+    border-radius: 20px;
+    
+}
+
+.col{
+    min-height: 420px;
+    min-width: 200px;  
+    float: left;
+    margin-left: 5px;
+    display: block;
+}
+
+.col section{
+    display: block;
+    height: 20%;
+}
+
+.col section div{
+    margin-top: auto;
+    position: relative;
+    width: 45%;
+    float: right;
+    margin-left: 10PX;
+   
+ 
+}
+
+.col section div:first-child{
+    float: left;
+    font-weight: bold;
+  
+}
+
+.col:last-child section div{
+    display: block;
+    float: none;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+}
+
+.col:last-child section div img{
+    width: 96%;
+}
+
+

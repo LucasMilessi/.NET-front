@@ -3,165 +3,178 @@ import styled from 'styled-components';
 import { Base64 } from "js-base64";
 import "../../styles/modal.css";
 import ImgPD from "../img/ImagenPorDefecto.png";
+import { makeRandomId } from "../IdRandom/IDRandom"
 
-const Modal = ({detalle, setClick, setDetalle}) => {
+const Modal = ({ detalle, setClick, sedivetalle }) => {
 
     const [imagen, setImagen] = useState('')
-    const [disable, setDisable] = useState(true)
-    
-    const actualizar = () =>{
+    const [disable, sedivisable] = useState(true)
+
+    const actualizar = () => {
         setClick(false);
-        setDetalle("");
+        sedivetalle("");
     }
 
-    const contruirImg = async() => {
+    const consectionuirImg = async () => {
 
         const base64 = await Base64.decode(detalle.img.data);
         const url = await detalle.img.contentType;
 
-        const imagen = base64+','+url;  
+        const imagen = base64 + ',' + url;
 
         setImagen(imagen)
     }
 
-    if(detalle.img !== null){
-        contruirImg();
+    if (detalle.img !== null) {
+        consectionuirImg();
     }
 
-    return ( <>
-    <Overlay>
-        <ContenedorModal>
-            <Encabezado>
-                <h4>Detalles:</h4>
-            </Encabezado>
-            <BotonCerrar onClick={()=> actualizar()}>
-                X
-            </BotonCerrar>
-            <Contenido>
-            <table className="tabla table">
-                    <thead>
-                    <tr key={1}>
-                         <th>Familia</th>
-                         <td>{detalle.familia}</td>
-                    </tr>
-                    <tr key={2}>
-                         <th>Especie</th>
-                         <td >{detalle.especie}</td>
-                    </tr>
-                    <tr key={3}>
-                        <th>Tipo Vegetativo</th>
-                        <td >{detalle.tipo_vegetativo}</td>
-                    </tr>
-                    <tr key={4}>
-                        <th>Rizoma Engrozado</th>
-                        <td >{detalle.rizoma_engrozado}</td>
-                    </tr>
-                    <tr key={5}>
-                        <th>Macollo 1</th>
-                        <td >{detalle.macollo1}</td>
-                    </tr>
-                    <tr key={6}>
-                        <th>Macollo 2</th>
-                        <td >{detalle.macollo2}</td>
-                    </tr>
-                    <tr key={7}>
-                        <th>Consistencia de Lígula</th>
-                        <td >{detalle.consistecia_de_la_ligula}</td>
-                    </tr>
-                    <tr key={8}>
-                        <th>Forma de la Lígula</th>
-                        <td >{detalle.forma_de_la_ligula}</td>
-                    </tr>
-                    <tr key={9}>
-                        <th>Tamaño</th>
-                        <td >{detalle.tamanio}</td>
-                    </tr>
-                    <tr key={10}>
-                        <th>Otra caracteristica de Lígula</th>
-                        <td >{detalle.otra_caracteristica_ligula}</td>
-                    </tr>
-                    <tr key={11}>
-                        <th>Color de Lígula</th>
-                        <td >{detalle.color_de_la_ligula}</td>
-                    </tr>
-                    <tr key={12}>
-                        <th>Forma de Lámina</th>
-                        <td >{detalle.forma_de_la_lamina}</td>
-                    </tr>
-                    <tr key={13}>
-                        <th>Canaliculada</th>
-                        <td >{detalle.canaliculada}</td>
-                    </tr>
-                    <tr key={14}>
-                        <th>Tipo de Lámina</th>
-                        <td >{detalle.tipo_de_lamina}</td>
-                    </tr>
-                    <tr key={15}>
-                        <th>Apice</th>
-                        <td >{detalle.apice}</td>
-                    </tr>
-                    <tr key={16}>
-                        <th>Nervadura</th>
-                        <td >{detalle.nervadura_central_marcada}</td>
-                    </tr>
-                    <tr key={17}>
-                        <th>Observaciones</th>
-                        <td >{detalle.observaciones}</td>
-                    </tr>
-                    <tr key={18}>
-                        <th>Pelos</th>
-                        <td >{detalle.pelos}</td>
-                    </tr>
-                    <tr key={19}>
-                        <th>Ubicación de pelos</th>
-                        <td >{detalle.ubicación_de_pelos}</td>
-                    </tr>
-                    <tr key={20}>
-                        <th>Observacion</th>
-                        <td >{detalle.observacion}</td>
-                    </tr>
-                    <tr key={21}>
-                        <th>Observaciones generales</th>
-                        <td >{detalle.observaciones_generales}</td>
-                    </tr>
-                    <tr key={22}>
-                        <th>Ciclo de Vida</th> 
-                        <td >{detalle.ciclo_de_vida}</td>
-                    </tr>
-                    <tr key={23}>
-                        <th>Ciclo Productivo</th> 
-                        <td >{detalle.ciclo_productivo}</td>
-                    </tr>
-                    <tr key={24}>
-                        <th>Tipo Productivo</th>
-                        <td >{detalle.tipo_productivo}</td>
-                    </tr>
-                    <tr key={25}>
-                        <th>Tipo de Campo</th>
-                        <td >{detalle.tipo_de_campo}</td>
-                    </tr>
-                    <tr key={26}>
-                        <th className='imagen'>Imagen</th>
-                        {detalle.img ? <img className='imgenPastura' src={imagen} alt={"Imagen de la Pastura"}/> : <img className='imgenPastura' src={ImgPD} alt={"Imagen por Defecto"}/>}          
-                    </tr>
-                 </thead>
-             </table>
-            </Contenido>
-        </ContenedorModal>
-    </Overlay>
-    </> );
+    return (<>
+        <Overlay>
+            <ContenedorModal>
+                <Encabezado>
+                    <h4>Detalles:</h4>
+                </Encabezado>
+                <BotonCerrar onClick={() => actualizar()}>
+                    X
+                </BotonCerrar>
+                <div className='contenido'>
+                    <div className='col'>
+                        <section key={makeRandomId(10)}>
+                            <div>Familia</div>
+                            <div>{detalle.familia}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Especie</div>
+                            <div >{detalle.especie}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Tipo Vegetativo</div>
+                            <div >{detalle.tipo_vegetativo}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Rizoma Engrozado</div>
+                            <div>{detalle.rizoma_engrozado}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Macollo 1</div>
+                            <div >{detalle.macollo1}</div>
+                        </section>
+                    </div>
+                    <div className='col'>
+
+                        <section key={makeRandomId(10)}>
+                            <div>Macollo 2</div>
+                            <div >{detalle.macollo2}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Consistencia de Lígula</div>
+                            <div >{detalle.consistecia_de_la_ligula}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Forma de la Lígula</div>
+                            <div >{detalle.forma_de_la_ligula}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Tamaño</div>
+                            <div >{detalle.tamanio}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Osectiona caracteristica de Lígula</div>
+                            <div >{detalle.osectiona_caracteristica_ligula}</div>
+                        </section>
+                    </div>
+                    <div className='col'>
+                        <section key={makeRandomId(10)}>
+                            <div>Color de Lígula</div>
+                            <div>{detalle.color_de_la_ligula}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Forma de Lámina</div>
+                            <div >{detalle.forma_de_la_lamina}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Canaliculada</div>
+                            <div >{detalle.canaliculada}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Tipo de Lámina</div>
+                            <div >{detalle.tipo_de_lamina}</div>
+                        </section>
+                        <section key={makeRandomId(10)}>
+                            <div>Apice</div>
+                            <div >{detalle.apice}</div>
+                        </section>
+                    </div>
+                    <div className='col'>
+                        <section key={16}>
+                            <div>Nervadura</div>
+                            <div >{detalle.nervadura_censectional_marcada}</div>
+                        </section>
+                        <section key={17}>
+                            <div>Observaciones</div>
+                            <div >{detalle.observaciones}</div>
+                        </section>
+                        <section key={18}>
+                            <div>Pelos</div>
+                            <div >{detalle.pelos}</div>
+                        </section>
+                        <section key={19}>
+                            <div>Ubicación de pelos</div>
+                            <div >{detalle.ubicación_de_pelos}</div>
+                        </section>
+                        <section key={20}>
+                            <div>Observacion</div>
+                            <div >{detalle.observacion}</div>
+                        </section>
+                    </div>
+                    <div className='col'>
+                        <section key={21}>
+                            <div>Observaciones generales</div>
+                            <div >{detalle.observaciones_generales}</div>
+                        </section>
+                        <section key={22}>
+                            <div>Ciclo de Vida</div>
+                            <div >{detalle.ciclo_de_vida}</div>
+                        </section>
+                        <section key={23}>
+                            <div>Ciclo Productivo</div>
+                            <div >{detalle.ciclo_productivo}</div>
+                        </section>
+                        <section key={24}>
+                            <div>Tipo Productivo</div>
+                            <div >{detalle.tipo_productivo}</div>
+                        </section>
+                        <section key={25}>
+                            <div>Tipo de Campo</div>
+                            <div >{detalle.tipo_de_campo}</div>
+                        </section>
+                    </div>
+                    <div className='col'>
+                        <section key={26}>
+                            <div className='Tituloimagen'>Imagen</div>
+                            <div className='imagen'>{detalle.img ? <img className='imgenPastura' src={imagen} alt={"Imagen de la Pastura"} /> : <img className='imgenPastura' src={ImgPD} alt={"Imagen por Defecto"} />}</div>
+                        </section>
+
+                    </div>
+                </div>
+            </ContenedorModal>
+        </Overlay>
+    </>);
 }
- 
+
 export default Modal;
 
 const ContenedorModal = styled.div`
-	width:500px;
+	min-width:1500px;
     min-height: 100px;
     background-color: white;
     position: relative;
     border-radius: 5px;
     box-shadow: rgba(100,100,111, 0.2) 0px 7px 29px 0px;
     padding: 20px;
+    display:inline-block;
+    margin:20px;
 `;
 
 const Overlay = styled.div`
@@ -199,7 +212,7 @@ const BotonCerrar = styled.div`
    border: none;
    background: none;
    cursor: pointer;
-   transition: .3s ease all;
+   sectionansition: .3s ease all;
    border-radius: 5px;
    color: red;
    text-align: center;
