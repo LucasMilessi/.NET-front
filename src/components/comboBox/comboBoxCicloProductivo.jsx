@@ -26,7 +26,7 @@ export const ComboBoxCicloProductivo = ( { ciclo_productivo, setCiclo_productivo
     <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione un Ciclo Productivo</option>
       { llenarCiclo_productivo != null ? llenarCiclo_productivo.map((arr) => 
-      arr == ciclo_productivo ?
+      arr === ciclo_productivo ?
         <option selected key={makeRandomId(10)}  value={arr} >{ arr}</option>
         :
         <option key={makeRandomId(10)}  value={arr} >{ arr}</option>

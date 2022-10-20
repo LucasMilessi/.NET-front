@@ -14,8 +14,9 @@ h1{
 }
 
 .fondo{
-    height: 150%;
     background-image:url(https://revistaverde.com.uy/wp-content/uploads/2018/09/pasturas-b-9-18-e1582732167389.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 label{

@@ -26,7 +26,7 @@ export const ComboBoxApice = ( { apice, setApice, obtenerFiltrado} ) => {
     <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
       <option>Seleccione Apice</option>
       { llenarApice != null ? llenarApice.map((arr) => 
-      arr == apice ?
+      arr === apice ?
         <option selected key={makeRandomId(10)}  value={arr} >{ arr }</option>
       :
         <option key={makeRandomId(10)}  value={arr} >{ arr }</option>

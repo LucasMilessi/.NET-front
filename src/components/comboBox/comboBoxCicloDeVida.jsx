@@ -24,9 +24,9 @@ export const ComboBoxCicloDeVida = ( { ciclo_de_vida, setCiclo_de_vida, obtenerF
 
   return (
     <select className="form-select-sm m-1" onChange={(e) => eleccion(e.target.value)}>
-      <option>Seleccione un Ciclo De Vida</option>
+      <option>Seleccione un Ciclo de Vida</option>
       { llenarCiclo_de_vida != null ? llenarCiclo_de_vida.map((arr) => 
-      arr == ciclo_de_vida ?
+      arr === ciclo_de_vida ?
         <option selected key={makeRandomId(10)}  value={arr} >{ arr }</option>
       :
         <option key={makeRandomId(10)}  value={arr} >{ arr }</option>

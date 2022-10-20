@@ -65,22 +65,82 @@ const Modal = ({detalle, setClick, setDetalle}) => {
                         <td >{detalle.macollo2}</td>
                     </tr>
                     <tr key={7}>
+                        <th>Consistencia de Lígula</th>
+                        <td >{detalle.consistecia_de_la_ligula}</td>
+                    </tr>
+                    <tr key={8}>
+                        <th>Forma de la Lígula</th>
+                        <td >{detalle.forma_de_la_ligula}</td>
+                    </tr>
+                    <tr key={9}>
+                        <th>Tamaño</th>
+                        <td >{detalle.tamanio}</td>
+                    </tr>
+                    <tr key={10}>
+                        <th>Otra caracteristica de Lígula</th>
+                        <td >{detalle.otra_caracteristica_ligula}</td>
+                    </tr>
+                    <tr key={11}>
+                        <th>Color de Lígula</th>
+                        <td >{detalle.color_de_la_ligula}</td>
+                    </tr>
+                    <tr key={12}>
+                        <th>Forma de Lámina</th>
+                        <td >{detalle.forma_de_la_lamina}</td>
+                    </tr>
+                    <tr key={13}>
+                        <th>Canaliculada</th>
+                        <td >{detalle.canaliculada}</td>
+                    </tr>
+                    <tr key={14}>
+                        <th>Tipo de Lámina</th>
+                        <td >{detalle.tipo_de_lamina}</td>
+                    </tr>
+                    <tr key={15}>
+                        <th>Apice</th>
+                        <td >{detalle.apice}</td>
+                    </tr>
+                    <tr key={16}>
+                        <th>Nervadura</th>
+                        <td >{detalle.nervadura_central_marcada}</td>
+                    </tr>
+                    <tr key={17}>
+                        <th>Observaciones</th>
+                        <td >{detalle.observaciones}</td>
+                    </tr>
+                    <tr key={18}>
+                        <th>Pelos</th>
+                        <td >{detalle.pelos}</td>
+                    </tr>
+                    <tr key={19}>
+                        <th>Ubicación de pelos</th>
+                        <td >{detalle.ubicación_de_pelos}</td>
+                    </tr>
+                    <tr key={20}>
+                        <th>Observacion</th>
+                        <td >{detalle.observacion}</td>
+                    </tr>
+                    <tr key={21}>
+                        <th>Observaciones generales</th>
+                        <td >{detalle.observaciones_generales}</td>
+                    </tr>
+                    <tr key={22}>
                         <th>Ciclo de Vida</th> 
                         <td >{detalle.ciclo_de_vida}</td>
                     </tr>
-                    <tr>
+                    <tr key={23}>
                         <th>Ciclo Productivo</th> 
                         <td >{detalle.ciclo_productivo}</td>
                     </tr>
-                    <tr key={8}>
+                    <tr key={24}>
                         <th>Tipo Productivo</th>
                         <td >{detalle.tipo_productivo}</td>
                     </tr>
-                    <tr key={9}>
+                    <tr key={25}>
                         <th>Tipo de Campo</th>
                         <td >{detalle.tipo_de_campo}</td>
                     </tr>
-                    <tr key={10}>
+                    <tr key={26}>
                         <th className='imagen'>Imagen</th>
                         {detalle.img ? <img className='imgenPastura' src={imagen} alt={"Imagen de la Pastura"}/> : <img className='imgenPastura' src={ImgPD} alt={"Imagen por Defecto"}/>}          
                     </tr>

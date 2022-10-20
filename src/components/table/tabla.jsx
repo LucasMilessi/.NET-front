@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react'
+import React, {useState} from 'react'
 import { makeRandomId } from "../IdRandom/IDRandom"
 import '../../styles/table.css'
 import Modal from '../modal/modal';
