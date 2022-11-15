@@ -8,14 +8,14 @@ export const LlenarTabla = ({ llenarTabla }) => {
     const [detalle, setDetalle] = useState([]);
     const [click, setClick] = useState(false);
 
-    const obtenerDetallesPorID = (id) => {
-        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/search/'+id)
+    const obtenerDetallesPorID = async(id) => {
+        await fetch('https://net-appi.fernandoh11.repl.co/pastura/search/'+id)
         .then(response => response.json())
         .then(data => {
             setDetalle(data); 
         });
-        console.log(detalle);
         setClick(true);
+        
     }
 
     return (

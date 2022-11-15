@@ -15,7 +15,7 @@ export const ComboBoxFormaDeLamina = ( { forma_de_la_lamina, setForma_de_la_lami
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/forma_de_la_lamina')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/forma_de_la_lamina')
     .then(response => response.json())
     .then(data => {
         setLlenarForma_de_la_lamina(data);

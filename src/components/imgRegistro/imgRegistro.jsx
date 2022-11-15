@@ -6,12 +6,11 @@ const ImgRegistro = () => {
     const[img,setImage] = useState();
     
     const obtenerObjPorID = () => {
-        fetch('http://localhost:1234/pastura/search/633b652a12bf22b126779043')
+        fetch('https://net-appi.fernandoh11.repl.co/pastura/search/633b652a12bf22b126779043')
         .then(response => response.json())
         .then(data => {
             setPastura(data); 
         });
-        console.log(pastura);
     }
 
     const imgSave = () => {
@@ -31,7 +30,7 @@ const ImgRegistro = () => {
             body: JSON.stringify(request)
         };
 
-        fetch("http://localhost:1234/pastura/create", requestOptions)
+        fetch("https://net-appi.fernandoh11.repl.co/pastura/create", requestOptions)
         .then(response => response.json(response))
         .catch(error => console.error('Error:', error))
     };

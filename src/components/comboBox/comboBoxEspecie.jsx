@@ -14,7 +14,7 @@ export const ComboBoxEspecie = ( { setEspecie, especie, obtenerFiltrado} ) => {
   }
 
   const obtenerValores = () => {
-        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/especie')
+        fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/especie')
         .then(response => response.json())
         .then(data => {
             setLlenarEspecie(data);

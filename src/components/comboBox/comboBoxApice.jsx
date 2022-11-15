@@ -15,7 +15,7 @@ export const ComboBoxApice = ( { apice, setApice, obtenerFiltrado} ) => {
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/apice')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/apice')
     .then(response => response.json())
     .then(data => {
       setLlenarApice(data);

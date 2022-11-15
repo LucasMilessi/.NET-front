@@ -15,7 +15,7 @@ export const ComboBoxNervadura = ( { nervadura_central_marcada, setNervadura_cen
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/nervadura_central_marcada')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/nervadura_central_marcada')
     .then(response => response.json())
     .then(data => {
         setLlenarNervadura_central_marcada(data);

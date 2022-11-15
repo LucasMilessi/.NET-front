@@ -26,32 +26,32 @@ export default function Footer() {
                 UTEC
               </h6>
               <p>
-                <img src={UTEC}/>
+                <img src={UTEC} alt=""/>
               </p>
             </MDBCol>
 
             <MDBCol md="2" lg="2" xl="2" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>CETP</h6>
               <p>
-              <img src={CTP}/>
+              <img src={CTP} alt=""/>
               </p>
             </MDBCol>
 
             <MDBCol md="3" lg="2" xl="2" className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Tecnólogo en Informática</h6>
               <p>
-              <img className="utec" src={TEC} onClick={()=> redireccion()}/>
+              <img className="utec" src={TEC} alt="" onClick={()=> redireccion()}/>
               </p>
             </MDBCol>
 
             <MDBCol md="4" lg="3" xl="3" className='mx-auto mb-md-0 mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Desarrolladores</h6>
               <p>
-                <img src={USER}/>
+                <img src={USER} alt=""/>
                 &nbsp;Lucas Milessi 
               </p>
               <p>
-                <img src={USER}/>
+                <img src={USER} alt=""/>
                 &nbsp;Fernando Hernández
               </p>
             </MDBCol>

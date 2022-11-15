@@ -15,7 +15,7 @@ export const ComboBoxTipoVegetativo = ( { tipo_vegetativo, setTipo_vegetativo , 
     }
 
     const obtenerValores = () => {
-        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/tipo_vegetativo')
+        fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/tipo_vegetativo')
         .then(response => response.json())
         .then(data => {
             setLlenarTipo_vegetativo(data);

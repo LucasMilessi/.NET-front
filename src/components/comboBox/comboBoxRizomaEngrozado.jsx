@@ -15,7 +15,7 @@ export const ComboBoxRizomaEngrozado = ( { rizoma_engrozado, setRizoma_engrozado
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/rizoma_engrozado')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/rizoma_engrozado')
     .then(response => response.json())
     .then(data => {
       setLlenarRizoma_engrozado(data);

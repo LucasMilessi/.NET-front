@@ -15,7 +15,7 @@ export const ComboBoxMacollo2 = ( { macollo2, setMacollo2, obtenerFiltrado} ) =>
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/macollo2')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/macollo2')
     .then(response => response.json())
     .then(data => {
       setLlenarMacollo2(data);

@@ -15,7 +15,7 @@ export const ComboBoxConsistenciaDeLigula = ( { consistecia_de_la_ligula, setCon
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/consistecia_de_la_ligula')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/consistecia_de_la_ligula')
     .then(response => response.json())
     .then(data => {
         setLlenarConsistecia_de_la_ligula(data);

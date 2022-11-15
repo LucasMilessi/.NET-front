@@ -15,7 +15,7 @@ export const ComboBoxCicloDeVida = ( { ciclo_de_vida, setCiclo_de_vida, obtenerF
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/ciclo_de_vida')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/ciclo_de_vida')
     .then(response => response.json())
     .then(data => {
       setLlenarCiclo_de_vida(data);

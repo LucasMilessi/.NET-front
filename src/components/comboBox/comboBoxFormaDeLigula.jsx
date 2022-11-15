@@ -15,7 +15,7 @@ export const ComboBoxFormaDeLigula = ( { forma_de_la_ligula, setForma_de_la_ligu
   }
 
   const obtenerValores = () => {
-    fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/forma_de_la_ligula')
+    fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/forma_de_la_ligula')
     .then(response => response.json())
     .then(data => {
         setLlenarForma_de_la_ligula(data);

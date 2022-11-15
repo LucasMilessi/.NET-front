@@ -14,7 +14,7 @@ export const ComboBoxUbicacionPelos = ( { ubicaciónDePelos, setUbicaciónDePelo
   }
 
   const obtenerValores = () => {
-        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/ubicación_de_pelos')
+        fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/ubicación_de_pelos')
         .then(response => response.json())
         .then(data => {
             setLlenarUbicaciónDePelos(data);

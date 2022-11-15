@@ -14,7 +14,7 @@ export const ComboBoxTipoDeLamina = ( { tipo_de_lamina, setTipo_de_lamina, obten
   }
 
   const obtenerValores = () => {
-        fetch('https://Pasturas-Back.fernandoh11.repl.co/pastura/valores/tipo_de_lamina')
+        fetch('https://net-appi.fernandoh11.repl.co/pastura/valores/tipo_de_lamina')
         .then(response => response.json())
         .then(data => {
             setLlenarTipoDeLamina(data);

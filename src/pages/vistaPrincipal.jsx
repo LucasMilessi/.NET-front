@@ -20,7 +20,7 @@ import Footer from '../components/footer/footer';
 import { LlenarTabla } from '../components/table/tabla';
 import '../styles/vistaPrincipal.css'
 
-const URL_API = "https://Pasturas-Back.fernandoh11.repl.co/pastura";
+const URL_API = "https://net-appi.fernandoh11.repl.co/pastura";
 
 function VistaPrincipal() {
 
